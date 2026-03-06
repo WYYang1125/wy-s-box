@@ -19,6 +19,10 @@ public class MusicBox {
         this.songArtists = artists;
         
         // -- TODO
+MusicBox mbox2 = new MusicBox("A12BC34", 'N', "Sunshine", "Bright", 
+    "Happy day", "Pop", "Star Music", "Sunny Vibes");
+
+playsong.playSong(mbox2.getSongID(), mbox2.getPremiumSong(), 1);
         /* Initialise  the rest of the variables in this Constructor block*/
     }
     
