@@ -1,4 +1,5 @@
-public class ERyder {
+// ERyder 类（非public）
+class ERyder {
     // 成员变量
     private int bikeID;
     private int batteryLevel;
@@ -7,7 +8,6 @@ public class ERyder {
 
     // 默认构造函数
     public ERyder() {
-        // 默认值可以设为0或false
         this.bikeID = 0;
         this.batteryLevel = 0;
         this.isAvailable = false;
@@ -17,7 +17,6 @@ public class ERyder {
     // 带所有参数的构造函数
     public ERyder(int bikeID, int batteryLevel, boolean isAvailable, double kmDriven) {
         this.bikeID = bikeID;
-        // 使用setter方法来确保电池电量在有效范围内
         this.setBatteryLevel(batteryLevel);
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
@@ -54,14 +53,11 @@ public class ERyder {
         return batteryLevel;
     }
 
-    // 设置电池电量的setter方法，包含范围检查
     public void setBatteryLevel(int batteryLevel) {
         if (batteryLevel >= 0 && batteryLevel <= 100) {
             this.batteryLevel = batteryLevel;
         } else {
             System.out.println("错误：电池电量必须在0到100之间。设置失败。");
-            // 如果输入无效，可以选择设置为默认值或抛出异常
-            // 这里选择保持原值不变
         }
     }
 
@@ -79,5 +75,27 @@ public class ERyder {
 
     public void setKmDriven(double kmDriven) {
         this.kmDriven = kmDriven;
+    }
+}
+
+// Main 类（必须是public，且文件名必须为Main.java）
+public class Main {
+    public static void main(String[] args) {
+        // 1. 使用默认构造函数创建对象，并调用printBikeDetails()
+        ERyder bike1 = new ERyder();
+        System.out.println("自行车1的初始信息：");
+        bike1.printBikeDetails();
+
+        // 2. 使用带参数的构造函数创建对象，调用ride()和printBikeDetails()
+        ERyder bike2 = new ERyder(1001, 80, true, 150.5);
+        System.out.println("尝试骑行车2：");
+        bike2.ride();
+        System.out.println("自行车2的详细信息：");
+        bike2.printBikeDetails();
+
+        // 测试setBatteryLevel的范围检查
+        System.out.println("尝试将自行车2的电量设置为150%：");
+        bike2.setBatteryLevel(150);
+        bike2.printBikeDetails();
     }
 }
