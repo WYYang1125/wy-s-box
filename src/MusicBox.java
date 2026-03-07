@@ -26,7 +26,11 @@ playsong.playSong(mbox2.getSongID(), mbox2.getPremiumSong(), 1);
         /* Initialise  the rest of the variables in this Constructor block*/
     }
     
-    
+    this.songTitle = title;       // 初始化歌曲标题
+        this.songAlbum = Album;       // 初始化歌曲专辑
+        this.songGenre = genre;       // 初始化歌曲流派
+        this.songProducer = producer; // 初始化歌曲制作人
+        this.songMusicLabel = label;  // 初始化歌曲唱片公司
     //Methods
     public String getSongID() {
         return songID;
@@ -41,8 +45,29 @@ playsong.playSong(mbox2.getSongID(), mbox2.getPremiumSong(), 1);
     }
 
 
-    // -- TODO
-        /* Create the rest of "getters" for the remaining variables */
+    public String getSongTitle() {
+        return songTitle;
+    }
+
+    public String getSongAlbum() {
+        return songAlbum;
+    }
+
+    public String getSongGenre() {
+        return songGenre;
+    }
+
+    public String getSongProducer() {
+        return songProducer;
+    }
+
+    public String getSongMusicLabel() {
+        return songMusicLabel;
+    }
+
+    public int getNoAds() {
+        return noAds;
+    }
     
 }
 
