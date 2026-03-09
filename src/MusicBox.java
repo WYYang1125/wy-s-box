@@ -26,12 +26,11 @@ playsong.playSong(mbox2.getSongID(), mbox2.getPremiumSong(), 1);
         /* Initialise  the rest of the variables in this Constructor block*/
     }
     
-    this.songTitle = title;       // 初始化歌曲标题
-        this.songAlbum = Album;       // 初始化歌曲专辑
-        this.songGenre = genre;       // 初始化歌曲流派
-        this.songProducer = producer; // 初始化歌曲制作人
-        this.songMusicLabel = label;  // 初始化歌曲唱片公司
-    //Methods
+    this.songTitle = title;      
+        this.songAlbum = Album;       
+        this.songGenre = genre;       
+        this.songProducer = producer; 
+        this.songMusicLabel = label;  
     public String getSongID() {
         return songID;
     }
